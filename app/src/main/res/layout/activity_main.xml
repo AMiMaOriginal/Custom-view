@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <com.amima.widget.Widget
-        android:id="@+id/wid"
+        android:id="@+id/myView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
