@@ -103,6 +103,8 @@ class Widget(context: Context?, attrs: AttributeSet?) : TextView(context, attrs)
         coordinateY = nowY
     }
 
+    public fun getNumber(): Int {return currentValue}
+
     override fun onDraw(canvas: Canvas?) {
         myCanvas = canvas
         myCanvas?.drawColor(Color.WHITE)
