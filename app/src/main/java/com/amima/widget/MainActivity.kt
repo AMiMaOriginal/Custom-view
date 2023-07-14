@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val widget = findViewById<Widget>(R.id.wid)
-        startActivity(Intent(this, MainActivity2(2)::class.java))
+        //val view = findViewById<Widget>(R.id.wid)
     }
 }
