@@ -28,6 +28,7 @@ class Widget(context: Context?, attrs: AttributeSet?) : TextView(context, attrs)
     private val nextNumberY = 40F
     private val currentNumberY = 110F
     private val previousNumberY = 180F
+    private lateinit var listener: OnChangeNumberListener
 
     init {
         val attribute = context?.obtainStyledAttributes(attrs, R.styleable.Widget)!!
@@ -38,6 +39,10 @@ class Widget(context: Context?, attrs: AttributeSet?) : TextView(context, attrs)
         currentValue = minValue
         nextValue = currentValue + 1
         previousValue = maxValue
+    }
+
+    fun setChangeNumberListener(listener: OnChangeNumberListener){
+        this.listener = listener
     }
 
     private fun changeNumbers(swipeUp: Boolean) {
@@ -60,6 +65,7 @@ class Widget(context: Context?, attrs: AttributeSet?) : TextView(context, attrs)
         if (previousValue < minValue)
             previousValue = maxValue
 
+        listener.onChangeNumber()
         invalidate()
     }
 
